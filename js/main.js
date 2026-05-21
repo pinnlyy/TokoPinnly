@@ -1,12 +1,9 @@
 import {
   createOrder,
-  fetchBanners,
   fetchCategories,
   fetchOrderByInvoice,
   fetchProductById,
   fetchProducts,
-  fetchSiteSettings,
-  fetchTestimonials,
   filterAndSortProducts,
   formatDate,
   formatIDR,
@@ -131,45 +128,6 @@ function injectBottomNavigation() {
   nav.innerHTML = items.map((it) => `<a class="${it.key === page || ((page === "detail" || page === "checkout") && it.key === "products") ? "active" : ""}" href="${it.href}"><span>${it.icon}</span>${it.label}${it.badge ? '<b data-cart-count>0</b>' : ""}</a>`).join("");
   document.body.appendChild(nav);
 }
-
-async function loadDynamicWebContent() {
-  if (!isFirebaseConfigured) return;
-  try {
-    const [settings, banners, testimonials] = await Promise.all([
-      fetchSiteSettings(),
-      fetchBanners(),
-      fetchTestimonials()
-    ]);
-
-    if (settings.logoUrl) {
-      qsa(".brand-logo-img, .profile-avatar img").forEach((img) => {
-        img.src = settings.logoUrl;
-      });
-    }
-
-    if (banners.length) {
-      const banner = banners[0];
-      qsa(".profile-cover img").forEach((img) => {
-        img.src = banner.imageUrl;
-        img.alt = banner.title || "Banner Pinnly Store";
-      });
-    }
-
-    const testiGrid = qs("#testimonialGrid");
-    if (testiGrid && testimonials.length) {
-      testiGrid.innerHTML = testimonials.slice(0, 6).map((item) => `
-        <article class="testimonial-card glass-card testimonial-photo-card">
-          ${item.imageUrl ? `<img src="${escapeHtml(item.imageUrl)}" alt="Testimoni Pinnly Store" loading="lazy">` : ""}
-          <strong>${escapeHtml(item.title || "Testimoni")}</strong>
-          <p>${escapeHtml(item.text || "Terima kasih sudah order di Pinnly Store.")}</p>
-        </article>
-      `).join("");
-    }
-  } catch (err) {
-    console.error("Gagal memuat konten dinamis:", err);
-  }
-}
-
 function renderConfigWarning(container) {
   if (!container || isFirebaseConfigured) return false;
   container.innerHTML = `<div class="error-state glass-card"><h3>Firebase belum dikonfigurasi</h3><p>Isi data Firebase Web App di <code>js/firebase-config.js</code>, lalu refresh halaman.</p></div>`;
@@ -240,7 +198,6 @@ async function initInvoicePage() {
 }
 
 setupCommonUI();
-loadDynamicWebContent();
 if (page === "home") initHomePage();
 if (page === "products") initProductsPage();
 if (page === "detail") initDetailPage();

@@ -164,6 +164,36 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .app-main { padding: 28px 0 78px; }
+
+.home-banner {
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.home-banner img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.info-note {
+  margin-top: 12px;
+  color: var(--muted);
+}
+.info-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .home-banner img { aspect-ratio: 1080 / 600; }
+  .info-actions { width: 100%; }
+  .info-actions .btn { flex: 1; min-width: 145px; }
+}
+
 .store-profile {
   position: relative;
   overflow: hidden;
@@ -1240,22 +1270,4 @@ html { scroll-behavior: smooth; }
   .cart-item button { grid-column: 1 / -1; }
   .cart-img { width: 64px; height: 64px; }
   .brand-logo-img { width: 48px; height: 48px; }
-}
-
-
-/* Dynamic photo content from Telegram bot */
-.testimonial-photo-card img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  margin-bottom: 12px;
-  background: rgba(15, 23, 42, 0.8);
-}
-
-.profile-cover img,
-.brand-logo-img,
-.profile-avatar img {
-  transition: opacity .25s ease, transform .25s ease;
 }

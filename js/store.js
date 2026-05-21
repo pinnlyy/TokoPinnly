@@ -14,9 +14,6 @@ import {
 const PRODUCTS_COLLECTION = "products";
 const CATEGORIES_COLLECTION = "categories";
 const ORDERS_COLLECTION = "orders";
-const SETTINGS_COLLECTION = "settings";
-const BANNERS_COLLECTION = "banners";
-const TESTIMONIALS_COLLECTION = "testimonials";
 
 export { isFirebaseConfigured };
 
@@ -90,31 +87,6 @@ function normalizeCategory(docSnap) {
     active: data.active === true,
     productCount: normalizePrice(data.productCount)
   };
-}
-
-
-export async function fetchSiteSettings() {
-  if (!isFirebaseConfigured) return {};
-  const snapshot = await getDoc(doc(db, SETTINGS_COLLECTION, "site"));
-  return snapshot.exists() ? snapshot.data() : {};
-}
-
-export async function fetchBanners() {
-  if (!isFirebaseConfigured) return [];
-  const snapshot = await getDocs(query(collection(db, BANNERS_COLLECTION), where("active", "==", true)));
-  return snapshot.docs
-    .map((d) => ({ id: d.id, ...d.data() }))
-    .filter((item) => item.imageUrl)
-    .sort((a, b) => String(b.id).localeCompare(String(a.id)));
-}
-
-export async function fetchTestimonials() {
-  if (!isFirebaseConfigured) return [];
-  const snapshot = await getDocs(query(collection(db, TESTIMONIALS_COLLECTION), where("active", "==", true)));
-  return snapshot.docs
-    .map((d) => ({ id: d.id, ...d.data() }))
-    .filter((item) => item.imageUrl || item.text)
-    .sort((a, b) => String(b.id).localeCompare(String(a.id)));
 }
 
 export async function fetchCategories() {
