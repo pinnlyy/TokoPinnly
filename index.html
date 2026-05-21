@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pinnly Store - toko online produk digital modern." />
+  <title>Pinnly Store — Online Shop Produk Digital</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body data-page="home">
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <div class="bg-noise"></div>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="./index.html" aria-label="Pinnly Store Home">
+        <img src="./assets/logo.png" class="brand-logo-img" alt="Pinnly Store Logo" />
+        <span>
+          <strong>Pinnly Store</strong>
+          <small>Online Shop</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#produk" data-nav="home">Produk</a>
+        <a href="#tools">Tools</a>
+        <a href="#gratis">Produk Gratis</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#info">Info</a>
+        <a href="./pages/kontak.html" data-nav="contact">Chat Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container app-main">
+    <section class="store-profile glass-card reveal">
+      <div class="profile-cover"><img src="./assets/banner.jpg" alt="Banner Pinnly Store"></div>
+      <div class="profile-row">
+        <div class="profile-avatar image"><img src="./assets/logo.png" alt="Pinnly Logo"></div>
+        <div class="profile-copy">
+          <p class="eyebrow">Digital Store • Bot • Panel • Script</p>
+          <h1>Pinnly Store</h1>
+          <p>Toko produk digital simpel, cepat, dan siap pakai untuk kebutuhan bot, script, panel, hosting, dan jasa online.</p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <a class="btn btn-primary" href="./pages/produk.html">Lihat Produk</a>
+        <a class="btn btn-secondary" href="./pages/kontak.html">Chat Admin</a>
+      </div>
+    </section>
+
+    <section class="quick-grid reveal delay-1" aria-label="Shortcut toko">
+      <a class="quick-card glass-card" href="https://whatsapp.com/channel/0029VbBG7WZ4SpkArJmOjD3u" target="_blank" rel="noopener">
+        <span class="quick-icon">📢</span>
+        <strong>Gabung Saluran</strong>
+        <small>Update stok & promo</small>
+      </a>
+      <a class="quick-card glass-card" href="https://t.me/pinnlyy" target="_blank" rel="noopener">
+        <span class="quick-icon">💬</span>
+        <strong>Chat Admin</strong>
+        <small>Bantuan cepat</small>
+      </a>
+      <div class="quick-card glass-card">
+        <span class="quick-icon">🛡️</span>
+        <strong>Transaksi Aman</strong>
+        <small>Aman & terpercaya</small>
+      </div>
+    </section>
+
+    <section class="mini-stats reveal delay-1">
+      <div class="mini-stat glass-card">
+        <span>Jumlah Produk</span>
+        <strong id="statProducts">0</strong>
+      </div>
+      <div class="mini-stat glass-card">
+        <span>Kategori</span>
+        <strong id="statCategories">0</strong>
+      </div>
+      <div class="mini-stat glass-card">
+        <span>Status</span>
+        <strong>Online</strong>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="produk">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow">Produk</p>
+          <h2>Produk terbaru</h2>
+        </div>
+        <a class="text-link" href="./pages/produk.html">Lihat semua</a>
+      </div>
+
+      <div class="category-strip" id="homeCategories">
+        <div class="skeleton-pill"></div>
+        <div class="skeleton-pill"></div>
+        <div class="skeleton-pill"></div>
+      </div>
+
+      <div class="product-grid app-product-grid" id="homeProducts">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="tools">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow">Tools</p>
+          <h2>Tools gratis</h2>
+        </div>
+        <span class="soft-label">100% aman</span>
+      </div>
+      <div class="tools-grid">
+        <article class="tool-card glass-card">
+          <span>🔐</span>
+          <h3>Password Generator</h3>
+          <p>Buat password kuat untuk akun toko atau panel.</p>
+        </article>
+        <article class="tool-card glass-card">
+          <span>📝</span>
+          <h3>Lorem Ipsum Generator</h3>
+          <p>Generate teks dummy untuk desain atau testing UI.</p>
+        </article>
+        <article class="tool-card glass-card">
+          <span>🔗</span>
+          <h3>Link WhatsApp</h3>
+          <p>Buat format link chat admin lebih rapi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="gratis">
+      <div class="info-panel glass-card">
+        <div>
+          <p class="eyebrow">Produk Gratis</p>
+          <h2>Area produk gratis</h2>
+          <p>Dapatkan update produk gratis dan promo terbaru dari admin.</p>
+        </div>
+        <a class="btn btn-secondary" href="./pages/kontak.html">Minta Info</a>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="testimoni">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow">Testimoni</p>
+          <h2>Bukti pelayanan</h2>
+        </div>
+      </div>
+      <div class="testimonial-grid" id="testimonialGrid">
+        <article class="testimonial-card glass-card">
+          <strong>Fast response</strong>
+          <p>Admin cepat bantu proses order dan konfirmasi.</p>
+        </article>
+        <article class="testimonial-card glass-card">
+          <strong>Produk rapi</strong>
+          <p>Produk digital dikirim sesuai pesanan pembeli.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block reveal" id="info">
+      <div class="info-panel glass-card">
+        <div>
+          <p class="eyebrow">Info Toko</p>
+          <h2>Tentang Pinnly Store</h2>
+          <p>Pinnly Store menyediakan produk digital seperti bot, script, panel, hosting, dan jasa online dengan proses order yang simpel dan cepat.</p>
+        </div>
+        <a class="btn btn-primary" href="./pages/produk.html">Mulai Belanja</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="yearNow"></span> Pinnly Store.</p>
+      <p>Digital Product • Bot • Script • Panel</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

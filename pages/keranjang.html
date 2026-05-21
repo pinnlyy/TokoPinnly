@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Keranjang belanja Pinnly Store." />
+  <title>Keranjang — Pinnly Store</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="cart">
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="../index.html" aria-label="Pinnly Store Home">
+        <img src="../assets/logo.png" class="brand-logo-img" alt="Pinnly Store Logo" />
+        <span><strong>Pinnly</strong><small>Store</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="./produk.html" data-nav="products">Produk</a>
+        <a href="./keranjang.html" data-nav="cart">Keranjang</a>
+        <a href="./invoice.html" data-nav="invoice">Invoice</a>
+        <a href="./kontak.html" data-nav="contact">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container page-shell">
+    <section class="page-hero glass-card reveal">
+      <p class="eyebrow">Keranjang Belanja</p>
+      <h1>Review pesanan kamu sebelum checkout.</h1>
+      <p>Kalau checkout lewat web perlu menunggu invoice. Kalau mau lebih cepat, order lewat Bot Telegram.</p>
+      <a class="btn btn-secondary" href="https://t.me/pinnlyy" target="_blank" rel="noopener">Order via Bot Telegram</a>
+    </section>
+
+    <section id="cartContent" class="reveal delay-1">
+      <div class="skeleton-card"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="yearNow"></span> Pinnly Store.</p>
+      <p>Keranjang lokal di browser.</p>
+    </div>
+  </footer>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
